@@ -21,27 +21,37 @@ public:
     void set_Model(int model){Year_model=model;}
     void set_speed(int sp){speed=sp;}
     int get_speed(){return speed;}
+    int get_model(){return Year_model;}
     string get_Brand(){return Car_Brand;}
     string get_type(){return Car_type;}
     string get_Plate(){return Car_Plate;}
 };
 
-class Road{
+class Road
+{
 private:
     char Road_Type;
     int Speed_Limit;
+    int countA=0; int countB=0; int countC=0;
 public:
-    Road(){}
-    Road(char Road_ty,int speed,int year_model){
-        Road_Type=Road_ty;Speed_Limit=speed;
+    Road();
+    Road(char Road_ty,int speed){
+        set_Type(Road_ty);Speed_Limit=speed;
     }
-    bool radar(int car_speed){
+    void set_Type(char type){
+        if(type != 'A' && type != 'B' && type != 'C'){
+            cout<<"Please enter A or B or C\n";
+        }
+        else Road_Type=type;
+    }
+    bool radar(int car_speed, char Road_Type){
         if(car_speed>=100) return true;
         else return false;
     }
     void allow(string car_type){
         
     }
+    
 };
 
 int main(){
