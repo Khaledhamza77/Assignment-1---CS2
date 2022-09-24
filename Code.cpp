@@ -55,11 +55,9 @@ public:
        else return false;
     }
     void allow(string car_type){
-        if(Road_Type='A'){
-            if(car_type == "private" || car_type == "motorcycle"){countA++;countB++;}}
-        else if(Road_Type='C'){
-            if(car_type == "truck"){countC++;countB++;}}
-        else countB++;
+    if(car_type == "private" || car_type == "motorcycle"){countA++;countB++;}
+    else if(car_type == "truck"){countC++;countB++;}
+    else countB++;
     }
     int age(int Year_Model){return 2022-Year_Model;}
 };
@@ -126,7 +124,16 @@ int main(){
         check(vehicles.front(),R,R.radar(vehicles.front().get_speed(),R.get_Type()));
         check(vehicles.front(),R2,R2.radar(vehicles.front().get_speed(),R2.get_Type()));
         check(vehicles.front(),R3,R3.radar(vehicles.front().get_speed(),R3.get_Type()));
+        vehicles.pop();
     }
+
+    cout<<"Number of cars allowed on Road A is: "<<R.get_countA()<<"\n";
+    cout<<"Number of cars allowed on Road B is: "<<R2.get_countB()<<"\n";
+    cout<<"Number of cars allowed on Road C is: "<<R3.get_countC()<<"\n";
+    cout<<"Road A efficiency: "<<R.get_countA()*100/R.get_countB()<<"%"<<"\n";
+    cout<<"Road B efficiency: "<<R2.get_countB()*100/R2.get_countB()<<"%"<<"\n";
+    cout<<"Road C efficiency: "<<R3.get_countC()*100/R2.get_countB()<<"%"<<"\n";
+    
 
     vehicles.push(car1);
     vehicles.push(car2);
