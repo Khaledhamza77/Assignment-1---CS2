@@ -63,20 +63,43 @@ public:
 };
 
 void check(Car car,Road R,bool x){
-    if(x){
-        cout<<"This car will be fined on Road of type: "<<R.get_Type()<<"\n";
-        cout<<"Brand: "<<car.get_Brand()<<"\n";
-        cout<<"Type: "<<car.get_type()<<"\n";
-        cout<<"Plate: "<<car.get_Plate()<<"\n";
-        cout<<"Speed: "<<car.get_speed()<<"\n";
-        cout<<"Year model: "<<car.get_model()<<"\n";
+    if(R.get_Type()=='A'&&(car.get_type() == "private" || car.get_type() == "motorcycle")){
+        if(x){
+            cout<<"This car will be fined on Road of type: "<<R.get_Type()<<"\n";
+            cout<<"Brand: "<<car.get_Brand()<<"\n";
+            cout<<"Type: "<<car.get_type()<<"\n";
+            cout<<"Plate: "<<car.get_Plate()<<"\n";
+            cout<<"Speed: "<<car.get_speed()<<"\n";
+            cout<<"Year model: "<<car.get_model()<<"\n";
+        }
+    }
+    else if(R.get_Type()=='C'&&car.get_type()=="truck"){
+        if(x){
+            cout<<"This car will be fined on Road of type: "<<R.get_Type()<<"\n";
+            cout<<"Brand: "<<car.get_Brand()<<"\n";
+            cout<<"Type: "<<car.get_type()<<"\n";
+            cout<<"Plate: "<<car.get_Plate()<<"\n";
+            cout<<"Speed: "<<car.get_speed()<<"\n";
+            cout<<"Year model: "<<car.get_model()<<"\n";
+        }
+    }
+    else if(R.get_Type()=='B'){
+        if(x){
+            cout<<"This car will be fined on Road of type: "<<R.get_Type()<<"\n";
+            cout<<"Brand: "<<car.get_Brand()<<"\n";
+            cout<<"Type: "<<car.get_type()<<"\n";
+            cout<<"Plate: "<<car.get_Plate()<<"\n";
+            cout<<"Speed: "<<car.get_speed()<<"\n";
+            cout<<"Year model: "<<car.get_model()<<"\n";
+        }
+
     }
 }
 
 int main(){
-    Road R('A',120);
-    Road R2('B',90);
-    Road R3('C',200);
+    Road R('A',160);
+    Road R2('B',100);
+    Road R3('C',90);
     int i=1;
     Car car1("Mercedes",70,2019);
     car1.set_Type("private");
@@ -84,13 +107,13 @@ int main(){
     Car car2("Opel",120,2005);
     car2.set_Type("taxi");
     car2.set_Plate("DCF334");
-    Car car3("Sacania",90,2017);
+    Car car3("Sacania",110,2017);
     car3.set_Type("truck");
     car3.set_Plate("BNA987");
     Car car4("Honda",60,2009);
     car4.set_Type("motorcycle");
     car4.set_Plate("HGV610");
-    Car car5("Hyundai",140,2020);
+    Car car5("Hyundai",170,2020);
     car5.set_Type("private");
     car5.set_Plate("MCX234");
     Car car6("BMW",80,2021);
@@ -134,7 +157,6 @@ int main(){
     cout<<"Road B efficiency: "<<R2.get_countB()*100/R2.get_countB()<<"%"<<"\n";
     cout<<"Road C efficiency: "<<R3.get_countC()*100/R2.get_countB()<<"%"<<"\n";
     
-
     vehicles.push(car1);
     vehicles.push(car2);
     vehicles.push(car3);
